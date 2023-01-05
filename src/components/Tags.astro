@@ -1,0 +1,18 @@
+---
+const {tags} = Astro.props
+
+type Tag = string
+
+---
+
+<nav>
+{tags.map((tag:Tag) => (
+  <a href="#">#{tag}</a>
+))}
+</nav>
+
+<style>
+  a {
+    @apply mr-2　hover:text-blue-500 duration-300;
+  }
+</style>

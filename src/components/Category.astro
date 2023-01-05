@@ -1,0 +1,16 @@
+---
+const {categorys} = Astro.props
+
+type Categorys = string
+
+---
+
+<nav>
+  <a>{categorys}</a>
+</nav>
+
+<style>
+  a {
+    @apply bg-blue-500 text-white py-1 px-2 rounded border-0 hover:bg-blue-600 duration-300 cursor-pointer;
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import MainLayout from "./MainLayout.astro"
+import Index from "../components/Index.astro"
+import RelatedArticleLayout from "./RelatedArticleLayout.astro";
+import Tags from "../components/Tags.astro";
+const {frontmatter} = Astro.props;
+---
+<MainLayout>
+  <h1 class="text-xl font-bold my-1">{frontmatter.title}</h1>
+  <div class="flex my-2">
+    <!-- <Category
+      category={frontmatter.category}
+    >
+    </Category> -->
+    <Tags
+      tags={frontmatter.tags}
+    >
+    </Tags>
+  </div>
+  <p class="my-2 text-gray-400 text-sm">更新日：<span class="tracking-widest">{frontmatter.updated}</span>　作成日：<span class="tracking-widest">{frontmatter.created}</span></p>
+  <Index></Index>
+  <section class="markdown-body">
+    <slot></slot>
+  </section>
+  <p>この記事を書いた人</p>
+  <p>{frontmatter.author}</p>
+  <p>
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <line x1="5" y1="12" x2="11" y2="18"></line>
+      <line x1="5" y1="12" x2="11" y2="6"></line>
+    </svg>
+    前の記事　次の記事
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <line x1="15" y1="16" x2="19" y2="12"></line>
+      <line x1="15" y1="8" x2="19" y2="12"></line>
+   </svg>
+  </p>
+  <RelatedArticleLayout
+    relateds = {frontmatter.relateds}
+  >
+  </RelatedArticleLayout>
+</MainLayout>
+
+<style>
+  .markdown-body h2 {
+    @apply text-xl my-1 border-b-2 border-solid border-gray-200;
+  }
+</style>

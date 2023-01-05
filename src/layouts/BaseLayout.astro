@@ -1,0 +1,27 @@
+---
+---
+<html lang="ja">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>My Life Blog</title>
+	</head>
+	<body class="container mx-auto">
+		<header class="flex justify-between py-5">
+			<h1 class="text-xl">タイトル</h1>
+			<nav>
+				<a href="/" class="mr-3 hover:text-blue-500 duration-300">ホーム</a>
+				<a href="/blog" class="mr-3 hover:text-blue-500 duration-300">ブログ</a>
+				<a href="/about" class="mr-3 hover:text-blue-500 duration-300">このサイトについて</a>
+			</nav>
+		</header>
+		<main class="flex flex-col md:flex-row">
+			<slot></slot>
+		</main>
+		<footer class="mt-5">
+			フッター
+		</footer>
+	</body>
+</html>

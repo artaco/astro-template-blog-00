@@ -1,0 +1,19 @@
+---
+
+const {title, items} = Astro.props
+
+type Item = {
+  name: string
+  url: string
+}
+
+---
+
+<nav>
+  <p>{title}</p>
+  <ul>
+    {items.map((item:Item) => (
+      <li><a href={item.url}>{item.name}</a></li>
+    ))}
+  </ul>
+</nav>

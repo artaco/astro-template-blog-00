@@ -1,0 +1,32 @@
+---
+import BaseLayout from "./BaseLayout.astro"
+import SidebarNav from "../components/SidebarNav.astro"
+import Index from "../components/Index.astro"
+---
+<BaseLayout>
+	<article class="w-4/5 pr-5 text-base">
+		<slot></slot>
+	</article>
+	<aside class="w-1/5">
+		<SidebarNav
+			title="カテゴリー"
+			items={[{name: "カテゴリー１", url: ""},{name: "カテゴリー２", url: ""}]}
+		>
+		</SidebarNav>
+		<SidebarNav
+			title="タグ"
+			items={[{name: "タグ１", url: ""},{name: "タグ２", url: ""}]}
+		>
+			<!-- <Category
+				category="結婚"
+			>
+			</Category> -->
+		</SidebarNav>
+		<SidebarNav
+			title="アーカイブ"
+			items={[{name: "2022年12月", url: ""},{name: "2022年11月", url: ""}]}
+		>
+		</SidebarNav>
+		<Index></Index>
+	</aside>
+</BaseLayout>

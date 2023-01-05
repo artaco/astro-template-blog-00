@@ -1,0 +1,20 @@
+---
+import RelatedArticle from "../components/RelatedArticle.astro"
+const {relateds} = Astro.props
+
+type Article = {
+  title: string
+  url: string
+}
+
+---
+<nav>
+  <p>関連記事</p>
+  {relateds.map((article:Article) => (
+    <RelatedArticle
+      title = {article.title}
+      url = {article.url}
+    >
+    </RelatedArticle>
+  ))}
+</nav>

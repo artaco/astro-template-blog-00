@@ -4,6 +4,12 @@ const posts = await Astro.glob("../pages/blogs/*.md")
 ---
 <MainLayout>
 	<ul>
-		{posts.map(post => <li><a href={post.frontmatter.url}>{post.frontmatter.title}</a></li>)}
+		{posts.map(post => <li><a href={post.frontmatter.url}>{post.frontmatter.title} {post.frontmatter.created}</a></li>)}
 	</ul>
 </MainLayout>
+
+<style>
+  a {
+    @apply mr-2　hover:text-blue-500 duration-300;
+  }
+</style>

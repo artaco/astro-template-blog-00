@@ -3,22 +3,24 @@ import MainLayout from "./MainLayout.astro"
 import Index from "../components/Index.astro"
 import RelatedArticleLayout from "./RelatedArticleLayout.astro";
 import Tags from "../components/Tags.astro";
+import Category from "../components/Category.astro";
 const {frontmatter} = Astro.props;
 ---
 <MainLayout>
-  <h1 class="text-xl font-bold my-1">{frontmatter.title}</h1>
+  <h1 class="text-3xl font-bold my-1">{frontmatter.title}</h1>
   <div class="flex my-2">
-    <!-- <Category
+    <Category
       category={frontmatter.category}
-    >
-    </Category> -->
+    />
     <Tags
       tags={frontmatter.tags}
-    >
-    </Tags>
+    />
   </div>
-  <p class="my-2 text-gray-400 text-sm">更新日：<span class="tracking-widest">{frontmatter.updated}</span>　作成日：<span class="tracking-widest">{frontmatter.created}</span></p>
-  <Index></Index>
+  <p class="my-2 text-gray-400 text-sm">
+    更新日：<span class="tracking-widest">{frontmatter.updated}</span>　作成日：<span class="tracking-widest">{frontmatter.created}</span>
+  </p>
+  <Index
+  />
   <section class="markdown-body">
     <slot></slot>
   </section>
@@ -47,6 +49,6 @@ const {frontmatter} = Astro.props;
 
 <style>
   .markdown-body h2 {
-    @apply text-xl my-1 border-b-2 border-solid border-gray-200;
+    @apply text-2xl my-1 border-b-2 border-solid border-gray-200;
   }
 </style>

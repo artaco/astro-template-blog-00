@@ -4,7 +4,7 @@ title: 今日の記事
 url: /blogs/post-1
 category: カテゴリー１
 tags: ["タグ１", "タグ２", "タグ３"]
-author: Aco
+author: Author
 description: テスト記事です
 created: 2022/11/08
 updated: 2022/11/10
